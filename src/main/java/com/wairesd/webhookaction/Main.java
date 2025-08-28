@@ -1,7 +1,6 @@
 package com.wairesd.webhookaction;
 
 import com.wairesd.webhookaction.config.ConfigMain;
-import com.wairesd.webhookaction.discord.webhook.Send;
 import com.wairesd.webhookaction.event.PlayerJoin;
 import com.wairesd.webhookaction.event.PlayerQuit;
 import org.bukkit.plugin.java.JavaPlugin;
