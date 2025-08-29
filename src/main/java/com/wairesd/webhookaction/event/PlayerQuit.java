@@ -12,6 +12,6 @@ public class PlayerQuit implements Listener {
         String playerName = event.getPlayer().getName();
 
         Send send = new Send();
-        send.main("Игрок " + playerName + " вышел на сервер");
+        send.send("Игрок " + playerName + " вышел на сервер");
     }
 }
