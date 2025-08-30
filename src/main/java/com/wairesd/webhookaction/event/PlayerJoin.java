@@ -8,7 +8,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class PlayerJoin implements Listener {
 
     @EventHandler
-    public void playerjoined (PlayerJoinEvent event) {
+    public void PlayerJoin (PlayerJoinEvent event) {
         String playerName = event.getPlayer().getName();
 
         Send send = new Send();

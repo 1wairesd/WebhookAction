@@ -8,7 +8,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class PlayerQuit implements Listener {
 
     @EventHandler
-    public void playerjoined (PlayerQuitEvent event) {
+    public void PlayerQuit (PlayerQuitEvent event) {
         String playerName = event.getPlayer().getName();
 
         Send send = new Send();
