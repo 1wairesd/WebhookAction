@@ -2,6 +2,3 @@ name: WebhookAction
 version: '1.0'
 main: com.wairesd.webhookaction.Main
 api-version: '1.20'
-
-libraries:
-  - net.dv8tion:JDA:6.0.0-preview
