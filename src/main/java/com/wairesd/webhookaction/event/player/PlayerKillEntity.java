@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import java.util.Map;
 
 public class PlayerKillEntity implements Listener {
-    private final Map<EntityType, String> entityKillMessages = Map.ofEntries(
+    private final Map<EntityType, String> entityKillMessages = Map.<EntityType, String>ofEntries(
             Map.entry(EntityType.ZOMBIE, "зомби"),
             Map.entry(EntityType.SKELETON, "скелета"),
             Map.entry(EntityType.CREEPER, "крипера"),
