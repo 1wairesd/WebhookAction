@@ -22,4 +22,8 @@ public class Settings {
     public static String getWebhookUrl() {
         return config.getString("webhook-url", "");
     }
+
+    public static boolean isDebugMode() {
+        return config.getBoolean("debug", false);
+    }
 }

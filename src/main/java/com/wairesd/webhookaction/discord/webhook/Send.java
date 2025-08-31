@@ -31,7 +31,10 @@ public class Send {
                 }
 
                 int responseCode = con.getResponseCode();
-                Bukkit.getLogger().info("Webhook response: " + responseCode);
+                if (Settings.isDebugMode()) {
+                    Bukkit.getLogger().info("Webhook response: " + responseCode);
+                }
+
                 con.disconnect();
             } catch (Exception e) {
                 e.printStackTrace();
