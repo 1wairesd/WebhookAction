@@ -11,7 +11,6 @@ public class PlayerDeath implements Listener {
     public void PlayerDeath(PlayerDeathEvent event) {
         String playerName = event.getPlayer().getName();
 
-        Send send = new Send();
-        send.send("Игрок " + playerName + " умер");
+        Send.send("Игрок " + playerName + " умер");
     }
 }

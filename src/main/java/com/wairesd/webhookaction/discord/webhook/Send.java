@@ -10,7 +10,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class Send {
-    public void send(String content) {
+    public static void send(String content) {
         Bukkit.getScheduler().runTaskAsynchronously(Main.getInstance(), () -> {
             String webhookUrl = Settings.getWebhookUrl();
             try {
@@ -20,15 +20,18 @@ public class Send {
                 con.setRequestProperty("Content-Type", "application/json; utf-8");
                 con.setRequestProperty("Accept", "application/json");
                 con.setDoOutput(true);
-                String jsonInputString = "{"
-                        + "\"username\": \"Bot\","
-                        + "\"content\": \"" + content + "\""
-                        + "}";
+                String safeContent = content.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n");
+                String jsonInputString = "{" +
+                        "\"username\": \"Bot\"," +
+                        "\"content\": \"" + safeContent + "\"" +
+                        "}";
 
                 try (OutputStream os = con.getOutputStream()) {
                     os.write(jsonInputString.getBytes(StandardCharsets.UTF_8));
                 }
 
+                int responseCode = con.getResponseCode();
+                Bukkit.getLogger().info("Webhook response: " + responseCode);
                 con.disconnect();
             } catch (Exception e) {
                 e.printStackTrace();

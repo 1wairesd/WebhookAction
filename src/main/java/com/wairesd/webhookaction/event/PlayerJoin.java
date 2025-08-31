@@ -11,7 +11,6 @@ public class PlayerJoin implements Listener {
     public void PlayerJoin (PlayerJoinEvent event) {
         String playerName = event.getPlayer().getName();
 
-        Send send = new Send();
-        send.send("Игрок " + playerName + " зашёл на сервер");
+        Send.send("Игрок " + playerName + " зашёл на сервер");
     }
 }
