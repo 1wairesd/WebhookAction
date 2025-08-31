@@ -30,10 +30,11 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Lightning(), this);
         getServer().getPluginManager().registerEvents(new Weather(), this);
         this.getCommand("webhook").setExecutor(new WebHook());
-        Send.send("Сервер успешно запущен");
+        Send.send("Сервер запущен");
     }
 
     @Override
     public void onDisable() {
+        Send.send("Сервер остановлен");
     }
 }
